@@ -48,7 +48,7 @@ public class AuthenticationController extends HttpServlet {
     private void showLogout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session= request.getSession();
         session.invalidate();
-        RequestDispatcher dispatcher= request.getRequestDispatcher("login.jsp");
+        RequestDispatcher dispatcher= request.getRequestDispatcher("home");
         dispatcher.forward(request,response);
     }
 
@@ -84,7 +84,7 @@ public class AuthenticationController extends HttpServlet {
 
         User user= userService.findUserByUANDP(username,password);
         HttpSession session =request.getSession();
-        if(user != null && user.getStatus() != 3){
+        if(user != null){
             session.setAttribute("username",user.getUsername());
             session.setAttribute("user",user);
             session.setAttribute("status",user.getStatus());

@@ -72,11 +72,17 @@
             <!-- nav -->
             <div class="section-row">
                 <ul class="nav-aside-menu">
+                    <c:if test="${sessionScope.user.fullname != null && sessionScope.user.status != 3}">
+                        <li><a href="dashboard">Manage App</a></li>
+                    </c:if>
                     <li><a href="home">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="#">Join Us</a></li>
                     <li><a href="#">Advertisement</a></li>
                     <li><a href="contact.html">Contacts</a></li>
+                    <c:if test="${sessionScope.user.fullname != null}">
+                        <li><a href="authentication?action=logout">Log Out</a></li>
+                    </c:if>
                 </ul>
             </div>
             <!-- /nav -->

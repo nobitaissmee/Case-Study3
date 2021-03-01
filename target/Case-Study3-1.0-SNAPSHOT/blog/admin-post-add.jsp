@@ -5,9 +5,9 @@
   Time: 4:05 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <%
     request.setCharacterEncoding("UTF-8");
 %>
@@ -28,13 +28,15 @@
     <!-- Fontfaces CSS-->
     <c:import url="css/fontfaces.jsp"></c:import>
     <!-- Bootstrap CSS-->
-    <link href="${pageContext.servletContext.contextPath}/admin-assets/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="${pageContext.servletContext.contextPath}/admin-assets/vendor/bootstrap-4.1/bootstrap.min.css"
+          rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
     <c:import url="css/vendor.jsp"></c:import>
     <!-- Main CSS-->
     <link href="${pageContext.servletContext.contextPath}/admin-assets/css/theme.css" rel="stylesheet" media="all">
 
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 </head>
 
 <body class="animsition" style="opacity: 1;">
@@ -82,7 +84,8 @@
                     <div class="row">
                         <!-- FORM ADD-->
                         <div class="col-12 col-md-12">
-                            <form action="${pageContext.servletContext.contextPath}/admin-post?action=add" method="post" class="form-horizontal">
+                            <form action="${pageContext.servletContext.contextPath}/admin-post?action=add" method="post"
+                                  class="form-horizontal">
                                 <div class="card-header">
                                     <strong>Add Post</strong>
                                 </div>
@@ -111,9 +114,9 @@
                                             <label for="longContent" class=" form-control-label">Long Content</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="text" id="longContent" name="longContent"
-                                                   placeholder="Long Content" value="${post.longContent}"
-                                                   class="form-control">
+                                        <textarea name="longContent" id="longContent" rows="9"
+                                                  placeholder="Long Content"
+                                                  class="form-control">${post.longContent}</textarea>
                                         </div>
                                     </div>
                                     <div class="row form-group">
@@ -132,12 +135,12 @@
                                         </div>
 
                                         <div class="col-12 col-md-9">
-                                                <select name="category" id="category" class="form-control">
-                                                    <c:forEach items="${list}" var="cate">
-                                                        <option value="" selected>Chose Category</option>
-                                                        <option value="${cate.id}">${cate.name}</option>
-                                                    </c:forEach>
-                                                </select>
+                                            <select name="category" id="category" class="form-control">
+                                                <c:forEach items="${list}" var="cate">
+                                                    <option value="" selected>Chose Category</option>
+                                                    <option value="${cate.id}">${cate.name}</option>
+                                                </c:forEach>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -182,7 +185,11 @@
         src="https://kit.fontawesome.com/a66a112bc4.js"
         crossorigin="anonymous"
 ></script>
-
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+<script src="">$('#longContent').summernote({
+    tabsize: 2,
+    height: 200
+})</script>
 </body>
 </html>
 <!-- end document-->
