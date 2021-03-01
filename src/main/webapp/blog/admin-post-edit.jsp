@@ -111,9 +111,9 @@
                                             <label for="longContent" class=" form-control-label">Long Content</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="text" id="longContent" name="longContent"
-                                                   placeholder="Long Content" value="${post.longContent}"
-                                                   class="form-control">
+                                        <textarea name="longContent" id="longContent" rows="9"
+                                                  placeholder="Long Content"
+                                                  class="form-control">${post.longContent}</textarea>
                                         </div>
                                     </div>
                                     <div class="row form-group">
@@ -186,7 +186,10 @@
         src="https://kit.fontawesome.com/a66a112bc4.js"
         crossorigin="anonymous"
 ></script>
-
+<script src="">$('#longContent').summernote({
+    tabsize: 2,
+    height: 200
+})</script>
 </body>
 </html>
 <!-- end document-->

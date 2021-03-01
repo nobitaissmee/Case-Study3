@@ -39,6 +39,10 @@
                             <i class="far fa-check-square"></i>User Manage</a>
                     </li>
                 </c:if>
+                <li>
+                    <a href="home">
+                        <i class="fas fa-home"></i>Home</a>
+                </li>
 
             </ul>
         </div>
