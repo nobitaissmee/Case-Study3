@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: Nobita
   Date: 2/24/2021
-  Time: 2:18 PM
+  Time: 9:52 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -37,7 +37,7 @@
 
 </head>
 
-<body class="animsition" style="opacity: 1">
+<body class="animsition" style="opacity: 1;">
 <div class="page-wrapper">
     <!-- HEADER MOBILE-->
     <c:import url="includes/header.jsp"></c:import>
@@ -48,15 +48,18 @@
     <!-- END MENU SIDEBAR-->
 
     <!-- PAGE CONTAINER-->
-    <c:import url="includes/header-desktop.jsp"></c:import>
+    <div class="page-container">
+        <!-- HEADER DESKTOP-->
+        <c:import url="includes/header-desktop.jsp"></c:import>
         <!-- HEADER DESKTOP-->
 
         <!-- MAIN CONTENT-->
         <div class="main-content">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
+
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-12 col-md-12">
                             <h3 class="title-5 m-b-35">Category Manager</h3>
                         </div>
                         <div class="table-data__tool">
@@ -65,9 +68,9 @@
                                    class="au-btn au-btn-icon au-btn--green au-btn--small"> <i
                                         class="zmdi zmdi-collection-item"></i>list
                                 </a>
+
                             </div>
-                            <div class="table-data__tool-right">
-                            </div>
+                            <div class="table-data__tool-right"></div>
                         </div>
                     </div>
                     <div class="row">
@@ -80,12 +83,11 @@
                     <div class="row">
                         <!-- FORM ADD-->
                         <div class="col-12 col-md-12">
-                            <form action="" method="post" class="form-horizontal">
+                            <form action="${pageContext.servletContext.contextPath}/admin-category?action=add" method="post" class="form-horizontal">
                                 <div class="card-header">
-                                    <strong>Edit Category</strong>
+                                    <strong>Add Category</strong>
                                 </div>
                                 <div class="card-body card-block">
-
                                     <div class="row form-group">
                                         <div class="col col-md-3">
                                             <label for="name" class=" form-control-label">Name</label>
@@ -107,7 +109,6 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <input type="hidden" id="id" name="id" value="${cate.id}">
                                     <button type="submit" class="btn btn-primary btn-sm">
                                         <i class="fa fa-dot-circle-o"></i> Submit
                                     </button>
@@ -117,7 +118,6 @@
                                 </div>
                             </form>
                         </div>
-
                     </div>
                     <div class="row">
                         <div class="col-md-12">
@@ -135,7 +135,6 @@
         <!-- END MAIN CONTENT-->
         <!-- END PAGE CONTAINER-->
     </div>
-
 </div>
 
 <!-- Jquery JS-->
@@ -153,6 +152,5 @@
 ></script>
 
 </body>
-
 </html>
 <!-- end document-->

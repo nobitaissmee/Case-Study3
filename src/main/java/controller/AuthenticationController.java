@@ -88,7 +88,7 @@ public class AuthenticationController extends HttpServlet {
             session.setAttribute("username",user.getUsername());
             session.setAttribute("user",user);
             session.setAttribute("status",user.getStatus());
-            response.sendRedirect("dashboard");
+            response.sendRedirect("home");
         } else {
             session.setAttribute("message","Username or password illegal.Please try again");
             response.sendRedirect("authentication");

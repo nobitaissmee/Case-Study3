@@ -57,6 +57,9 @@
 
                 <!-- search & aside toggle -->
                 <div class="nav-btns">
+                    <c:if test="${sessionScope.user.fullname == null}">
+                    <button><i class="fas fa-sign-in-alt"></i><a href="authentication">Login</a></button>
+                    </c:if>
                     <button class="aside-btn"><i class="fa fa-bars"></i></button>
                 </div>
                 <!-- /search & aside toggle -->
