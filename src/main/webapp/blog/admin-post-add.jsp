@@ -135,9 +135,9 @@
                                         </div>
 
                                         <div class="col-12 col-md-9">
-                                            <select name="category" id="category" class="form-control">
+                                            <select name="category" id="category" class="form-control" required>
                                                 <c:forEach items="${list}" var="cate">
-                                                    <option value="" selected>Chose Category</option>
+                                                    <option selected>Chose Category</option>
                                                     <option value="${cate.id}">${cate.name}</option>
                                                 </c:forEach>
                                             </select>

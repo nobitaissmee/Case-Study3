@@ -122,7 +122,8 @@
                                             <label for="status" class=" form-control-label">Status</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <select name="status" id="status" class="form-control">
+                                            <select name="status" id="status" class="form-control" required>
+                                                <option selected>Choose User</option>
                                                 <option value="1">Admin</option>
                                                 <option value="2">Staff</option>
                                                 <option value="3">User</option>
